@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "staks-7ba5"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "staks-7ba5"
+  template:
+    metadata:
+      labels:
+        app: "staks-7ba5"
+    spec:
+      containers:
+        - name: "staks-7ba5"
+          image: "stacr.azurecr.io/staks"
+          ports:
+          - containerPort: 8080
